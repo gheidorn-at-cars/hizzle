@@ -53,7 +53,7 @@ pre_erlang_get_and_update_deps() {
 
       npm install
 
-      webpack --mode production
+      npx webpack --mode production
 
       cd ..
 
