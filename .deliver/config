@@ -61,7 +61,7 @@ pre_erlang_get_and_update_deps() {
 
       echo \"webpack finished and we returned\"
 
-      APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phoenix.digest $SILENCE
+      APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phx.digest $SILENCE
     "
   fi
 }
