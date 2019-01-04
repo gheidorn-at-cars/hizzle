@@ -1,5 +1,6 @@
 defmodule HizzleWeb.Router do
   use HizzleWeb, :router
+  require Ueberauth
 
   pipeline :browser do
     plug :accepts, ["html"]
