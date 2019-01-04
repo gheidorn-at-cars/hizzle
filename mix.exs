@@ -19,7 +19,7 @@ defmodule Hizzle.MixProject do
   def application do
     [
       mod: {Hizzle.Application, []},
-      extra_applications: [:logger, :runtime_tools, :edeliver]
+      extra_applications: [:logger, :runtime_tools, :ueberauth, :ueberauth_auth0, :edeliver]
     ]
   end
 
@@ -40,6 +40,9 @@ defmodule Hizzle.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:distillery, "~> 2.0"},
+      {:ueberauth, "~> 0.5"},
+      {:ueberauth_auth0, "~> 0.3"},
+      {:poison, "~> 3.1"},
       {:edeliver, "~> 1.6.0"}
     ]
   end

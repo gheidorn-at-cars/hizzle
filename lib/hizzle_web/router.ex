@@ -13,10 +13,20 @@ defmodule HizzleWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/auth", HizzleWeb do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+    post "/:provider/callback", AuthController, :callback
+  end
+
   scope "/", HizzleWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/song", SongController, :index
+    get "/logout", AuthController, :logout
   end
 
   # Other scopes may use custom stacks.
