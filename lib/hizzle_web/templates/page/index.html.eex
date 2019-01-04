@@ -1,8 +1,13 @@
 <section class="phx-hero">
+  <!-- 
   <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
   <p>A productive web framework that<br/>does not compromise speed and maintainability.</p>
+  -->
+
+  <img src="https://img.discogs.com/AkvijwuTQUZbo4Z37Qwwhg3ymVk=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-21742-1505067253-1678.jpeg.jpg">
 </section>
 
+<!--
 <section class="row">
   <article class="column">
     <h2>Resources</h2>
@@ -33,3 +38,4 @@
     </ul>
   </article>
 </section>
+-->
