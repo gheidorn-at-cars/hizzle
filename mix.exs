@@ -43,7 +43,8 @@ defmodule Hizzle.MixProject do
       {:ueberauth, "~> 0.5"},
       {:ueberauth_auth0, "~> 0.3"},
       {:poison, "~> 3.1"},
-      {:edeliver, "~> 1.6.0"}
+      {:edeliver, "~> 1.6.0"},
+      {:libcluster, "~> 2.0.3"}
     ]
   end
 end
