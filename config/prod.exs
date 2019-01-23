@@ -80,3 +80,14 @@ config :hizzle, HizzleWeb.Endpoint,
 #   url: System.get_env("DATABASE_URL"),
 #   ssl: true,
 #   pool_size: 2 # Free tier db only allows 4 connections. Rolling deploys need pool_size*(n+1) connections.
+
+config :libcluster,
+  topologies: [
+    k8s_example: [
+      strategy: Cluster.Strategy.Kubernetes,
+      config: [
+        kubernetes_selector: "${LIBCLUSTER_KUBERNETES_SELECTOR}",
+        kubernetes_node_basename: "${LIBCLUSTER_KUBERNETES_NODE_BASENAME}"
+      ]
+    ]
+  ]
