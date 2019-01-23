@@ -9,10 +9,13 @@ defmodule Hizzle.Application do
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      HizzleWeb.Endpoint
+      HizzleWeb.Endpoint,
       # Starts a worker by calling: Hizzle.Worker.start_link(arg)
       # {Hizzle.Worker, arg},
+      {Registry, keys: :unique, name: Hizzle.PullRequestRegistry}
     ]
+
+    :ets.new(:pr_table, [:public, :named_table])
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
