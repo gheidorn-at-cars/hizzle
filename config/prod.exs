@@ -74,6 +74,7 @@ config :phoenix, :serve_endpoints, true
 
 config :hizzle, HizzleWeb.Endpoint,
   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE"),
+  check_origin: ["//localhost", "//hizzle.herokuapp.com"],
   server: true
 
 config :hizzle, HizzleWeb.Repo,
