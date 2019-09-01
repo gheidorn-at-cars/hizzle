@@ -52,7 +52,8 @@ config :hizzle, HizzleWeb.Endpoint,
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/hizzle_web/views/.*(ex)$},
-      ~r{lib/hizzle_web/templates/.*(eex)$}
+      ~r{lib/hizzle_web/templates/.*(eex)$},
+      ~r{lib/demo_web/live/.*(ex)$}
     ]
   ]
 
@@ -65,3 +66,7 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+if File.exists?("#{Path.dirname(__ENV__.file())}/dev.secret.exs") do
+  import_config "dev.secret.exs"
+end

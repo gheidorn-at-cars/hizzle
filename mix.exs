@@ -32,9 +32,10 @@ defmodule Hizzle.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.4.0"},
+      {:phoenix, "~> 1.4.2"},
+      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
       {:phoenix_pubsub, "~> 1.1"},
-      {:phoenix_html, "~> 2.11"},
+      {:phoenix_html, "~> 2.13", github: "phoenixframework/phoenix_html", override: true},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
@@ -44,7 +45,9 @@ defmodule Hizzle.MixProject do
       {:ueberauth_auth0, "~> 0.3"},
       {:poison, "~> 3.1"},
       {:edeliver, "~> 1.6.0"},
-      {:libcluster, "~> 2.0.3"}
+      {:libcluster, "~> 2.0.3"},
+      {:ecto_sql, "~> 3.0"},
+      {:postgrex, ">= 0.0.0"}
     ]
   end
 end

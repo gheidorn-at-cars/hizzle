@@ -12,6 +12,7 @@ defmodule Hizzle.Application do
       HizzleWeb.Endpoint,
       # Starts a worker by calling: Hizzle.Worker.start_link(arg)
       # {Hizzle.Worker, arg},
+      {Hizzle.Repo, []},
       {Registry, keys: :unique, name: Hizzle.PullRequestRegistry}
     ]
 

@@ -12,7 +12,8 @@ use Mix.Config
 config :hizzle, HizzleWeb.Endpoint,
   http: [:inet6, port: System.get_env("PORT") || 4000],
   # http: [port: 8080],
-  url: [host: "phony-cooperative-asianporcupine.gigalixirapp.com", port: 80],
+  url: [scheme: "https", host: "hizzle", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
@@ -91,3 +92,15 @@ config :libcluster,
       ]
     ]
   ]
+
+# Configures Ueberauth's Auth0 auth provider
+config :hizzle, Ueberauth.Strategy.Auth0.OAuth,
+  domain:
+    "${AUTH0_DOMAIN}" ||
+      raise("AUTH0_DOMAIN environment variable is not set"),
+  client_id:
+    "${AUTH0_CLIENT_ID}" ||
+      raise("AUTH0_CLIENT_ID environment variable is not set"),
+  client_secret:
+    "${AUTH0_CLIENT_SECRET}" ||
+      raise("AUTH0_CLIENT_SECRET environment variable is not set")

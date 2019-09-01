@@ -1,6 +1,8 @@
 defmodule HizzleWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :hizzle
 
+  socket "/live", Phoenix.LiveView.Socket, websocket: true
+
   socket "/socket", HizzleWeb.UserSocket,
     websocket: true,
     longpoll: false

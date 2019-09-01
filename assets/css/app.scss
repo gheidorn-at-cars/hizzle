@@ -1,0 +1,7 @@
+$primary-color: teal;
+
+h1 {
+  color: $primary-color;
+}
+
+@import './phoenix.css';
